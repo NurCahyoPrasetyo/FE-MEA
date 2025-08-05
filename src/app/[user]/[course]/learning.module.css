@@ -1,0 +1,77 @@
+.container {
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+}
+
+.videoSection {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 2rem;
+}
+
+.videoPlayer {
+    background: #ddd;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoPlayer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.videoPlaceholder {
+    width: 100%;
+    height: 100%;
+    background-color: #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.videoNav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.videoNav button {
+    padding: 0.5rem 1rem;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.videoNav button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.lessonList {
+    margin-top: 2rem;
+}
+
+.chapter {
+    margin-bottom: 1.5rem;
+}
+
+.chapter h4 {
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.chapter ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.chapter li {
+    margin-bottom: 0.25rem;
+}
