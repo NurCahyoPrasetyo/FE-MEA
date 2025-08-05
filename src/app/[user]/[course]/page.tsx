@@ -2,7 +2,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./learning.module.css";
 
 const CoursesPage = () => {
@@ -13,7 +13,7 @@ const CoursesPage = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
   const [flattenedLessons, setFlattenedLessons] = useState<any[]>([]);
 
-  const handleGetCourse = async () => {
+  const handleGetCourse = useCallback(async () => {
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/course?course_id=${course}&user_id=${user}`,
@@ -23,7 +23,6 @@ const CoursesPage = () => {
       const courseData = result.data;
       setData(courseData);
 
-      // Flatten lessons
       const flatLessons = courseData.chapters?.flatMap((chapter: any) =>
         chapter.lessons.map((lesson: any) => ({
           ...lesson,
@@ -34,7 +33,7 @@ const CoursesPage = () => {
     } catch (error: any) {
       console.error(error.message);
     }
-  };
+  }, [course, user]);
 
   const handleNext = () => {
     if (currentLessonIndex < flattenedLessons.length - 1) {
@@ -50,7 +49,7 @@ const CoursesPage = () => {
 
   useEffect(() => {
     handleGetCourse();
-  }, []);
+  }, [handleGetCourse]);
 
   const currentLesson = flattenedLessons[currentLessonIndex];
 
