@@ -37,3 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 email: candidate@mail.com
 pass: 321321
+https://docs.google.com/document/d/1DzXK4cva-0nUhrFjwNIGgnsGQERxb0vfsq78zMUXL9o/edit?tab=t.0
