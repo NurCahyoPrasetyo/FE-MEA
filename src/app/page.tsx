@@ -51,7 +51,7 @@ export default function Home() {
       if (result?.data?.user_id) {
         router.push(`/${result.data.user_id}`);
       } else {
-        router.push("/dashboard");
+        router.push("/");
       }
     } catch (err: any) {
       setError(err?.message ?? "Login gagal");
