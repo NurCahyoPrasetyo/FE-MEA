@@ -34,7 +34,7 @@ export default function Home() {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
           },
-          credentials: "include", // penting jika server set-cookie
+          credentials: "include",
           body: new URLSearchParams({
             email,
             password,
@@ -48,7 +48,6 @@ export default function Home() {
       }
 
       const result = await response.json();
-      // contoh redirect ke halaman user berdasarkan response
       if (result?.data?.user_id) {
         router.push(`/${result.data.user_id}`);
       } else {
